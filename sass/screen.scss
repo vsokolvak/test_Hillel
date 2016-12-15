@@ -107,17 +107,23 @@ body {
     background-color: white;
     padding: 50px;
     border-collapse: collapse;
+    position: relative;
 
     .menu {
         width: 30%;
         border: 1px solid black;
         border-right: none;
         @include box_sizing;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
 
         ul {
             width: 100%;
             display: flex;
             flex-direction: column;
+
 
             li {
                 width: 100%;
@@ -134,9 +140,24 @@ body {
                     background-color: lightgrey;
 
                 }
-            }
+            }                     
         }
+         span {
+                display: block;
+                padding: 10px;
+        }  
     }  
+
+    .square {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 5px solid grey;
+        background-color: white;
+        top: 32px;
+        right: 32px;
+        z-index: 10;
+    }
 
     .content {
         width: 70%;
@@ -146,6 +167,8 @@ body {
         background-color: rebeccapurple;
         color: $page_font_color;
         overflow: hidden;
+        position: relative;
+
 
         .content_menu {
             display: none;
@@ -194,4 +217,45 @@ body {
             }
         }
     }  
+}
+@media screen and (max-width: 750px) {
+    .page_header {
+        flex-direction: column;
+
+        .logo{
+            padding-bottom: 20px;
+        }
+
+        h1{
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main_page {
+        flex-direction: column;
+
+        .menu{
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .content {
+            width: 100%;
+
+            .column3 {
+                flex-wrap: wrap;
+
+                .col1 {
+                    width: 100% !important;
+                }
+
+                .col2 {
+                    width: 100% !important;
+                    padding-left: 0 !important;
+                }
+            }
+        }
+    }
 }
