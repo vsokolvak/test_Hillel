@@ -78,6 +78,7 @@ body {
                 transition: all 2s linear;
                 -webkit-transition: all 2s linear;
                 -moz-transition: all 2s linear;
+                background-color: lightgreen;
             }
 
             .border2 {
@@ -118,6 +119,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        background-color: lightgreen;
 
         ul {
             width: 100%;
