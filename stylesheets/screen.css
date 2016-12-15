@@ -71,14 +71,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   width: 100%;
   max-width: 1000px;
-  padding: 50px;
   margin: auto;
+  background-color: lightslategrey;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 27, ../sass/screen.scss */
+.page_header {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+}
+/* line 35, ../sass/screen.scss */
 .page_header .logo {
   color: black;
-  font-size: 20px;
+  font-size: 35px;
   position: relative;
   width: 100px;
   height: 100px;
@@ -89,7 +99,7 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-/* line 37, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .page_header .logo .border, .page_header .logo .border2 {
   position: absolute;
   content: '';
@@ -109,21 +119,25 @@ body {
   -webkit-transition: all 2s linear;
   -moz-transition: all 2s linear;
 }
-/* line 57, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .page_header .logo .border2 {
   transform: rotate(0);
   -webkit-transform: rotate(0);
   -moz-transform: rotate(0);
 }
-/* line 64, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .page_header .logo:hover .border, .page_header .logo:hover .border2 {
   transform: rotate(405deg);
   -webkit-transform: rotate(405deg);
   -moz-transform: rotate(405deg);
 }
-/* line 70, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .page_header .logo:hover .border2 {
   transform: rotate(-360deg);
   -webkit-transform: rotate(-360deg);
   -moz-transform: rotate(-360deg);
+}
+/* line 87, ../sass/screen.scss */
+.page_header h1 {
+  font-size: 50px;
 }
