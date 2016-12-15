@@ -6,6 +6,7 @@
 @import "compass/reset";
 //
     $page_font_color: black;
+    $page_font_color_hover: grey;
 //
 //mixin
     @mixin flex_centr() {
@@ -13,6 +14,23 @@
         justify-content: center;
         align-items: center;
     }
+    @mixin box_sizing() {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    @mixin transform_rotate($x) {
+        transform: rotate($x);
+        -webkit-transform: rotate($x);
+        -moz-transform: rotate($x);
+    }
+//
+
+//class active menu align-items: 
+.active {
+    background-color: rebeccapurple !important;
+    border-right: none !important;
+}
 //
 
 body {
@@ -50,14 +68,10 @@ body {
                 height: 100px;
                 top: 0;
                 left: 0;
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
+                @include transform_rotate(45deg);
                 border: 1px solid black;
                 z-index: -1;
-                box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
+                @include box_sizing;
                 transition: all 2s linear;
                 -webkit-transition: all 2s linear;
                 -moz-transition: all 2s linear;
@@ -65,27 +79,110 @@ body {
 
             .border2 {
                 @extend .border;
-                transform: rotate(0);
-                -webkit-transform: rotate(0);
-                -moz-transform: rotate(0);
+                @include transform_rotate(0);
             }
 
             &:hover .border {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -moz-transform: rotate(405deg);
+                @include transform_rotate(405deg);
             }
 
             &:hover .border2 {
-                transform: rotate(-360deg);
-                -webkit-transform: rotate(-360deg);
-                -moz-transform: rotate(-360deg);
+                @include transform_rotate(-360deg);
 
             }
     }
 
     h1 {
         font-size: 50px;
+        color: $page_font_color;
     }
     
+}
+
+.main_page{
+    display: flex;
+    background-color: white;
+    padding: 50px;
+    border-collapse: collapse;
+
+    .menu {
+        width: 30%;
+        border: 1px solid black;
+        border-right: none;
+        @include box_sizing;
+
+        ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            li {
+                width: 100%;
+                padding: 20px;
+                font-size: 35px;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                @include box_sizing;
+                color: $page_font_color;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $page_font_color_hover;
+                    background-color: lightgrey;
+
+                }
+            }
+        }
+    }  
+
+    .content {
+        width: 70%;
+        @include box_sizing;
+        border: 1px solid black;
+        border-left: none;
+        background-color: rebeccapurple;
+        color: $page_font_color;
+
+        .content_menu {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+
+            .column1 {
+                columns: 2 150px;
+                -webkit-columns: 2 150px;
+                -moz-columns: 2 150px;
+                column-gap: 30px;
+                -webkit-column-gap: 30px;
+                -moz-column-gap: 30px;
+                padding-bottom: 50px;
+   
+            }
+
+            .column2 {
+                columns: 3 80px;
+                -webkit-columns: 3 80px;
+                -moz-columns: 3 80px;
+                column-gap: 30px;
+                -webkit-column-gap: 30px;
+                -moz-column-gap: 30px;
+                padding-bottom: 50px;
+            }
+
+            .column3 {
+                display: flex;
+                
+                .col1 {
+                    width: 30%;
+                    @include box_sizing;
+                    min-width: 80px;
+                }
+                .col2 {
+                    width: 70%;
+                    @include box-sizing;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }  
 }
