@@ -31,6 +31,9 @@
     background-color: rebeccapurple !important;
     border-right: none !important;
 }
+.active_content {
+    left: 0 !important;
+}
 //
 
 body {
@@ -142,11 +145,17 @@ body {
         border-left: none;
         background-color: rebeccapurple;
         color: $page_font_color;
+        overflow: hidden;
 
         .content_menu {
-            display: flex;
+            display: none;
             flex-direction: column;
             padding: 20px;
+            position: relative;
+            left: 100%;
+            transition: all 1s ease;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
 
             .column1 {
                 columns: 2 150px;
