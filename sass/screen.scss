@@ -4,3 +4,75 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+//
+    $page_font_color: black;
+//
+//mixin
+    @mixin flex_centr() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+//
+
+body {
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+    margin: auto;
+}
+
+.page_header {
+    .logo {
+        color: $page_font_color;
+        font-size: 20px;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        @include flex_centr;
+        z-index: 10;
+        font-weight: bold;
+        cursor: pointer;
+
+            .border {
+                position: absolute;
+                content: '';
+                width: 100px;
+                height: 100px;
+                top: 0;
+                left: 0;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                border: 1px solid black;
+                z-index: -1;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                transition: all 2s linear;
+                -webkit-transition: all 2s linear;
+                -moz-transition: all 2s linear;
+            }
+
+            .border2 {
+                @extend .border;
+                transform: rotate(0);
+                -webkit-transform: rotate(0);
+                -moz-transform: rotate(0);
+            }
+
+            &:hover .border {
+                transform: rotate(405deg);
+                -webkit-transform: rotate(405deg);
+                -moz-transform: rotate(405deg);
+            }
+
+            &:hover .border2 {
+                transform: rotate(-360deg);
+                -webkit-transform: rotate(-360deg);
+                -moz-transform: rotate(-360deg);
+
+            }
+    }
+    
+}

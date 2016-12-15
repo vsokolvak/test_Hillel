@@ -66,3 +66,64 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/* line 18, ../sass/screen.scss */
+body {
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  margin: auto;
+}
+
+/* line 26, ../sass/screen.scss */
+.page_header .logo {
+  color: black;
+  font-size: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 37, ../sass/screen.scss */
+.page_header .logo .border, .page_header .logo .border2 {
+  position: absolute;
+  content: '';
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  border: 1px solid black;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  transition: all 2s linear;
+  -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+}
+/* line 57, ../sass/screen.scss */
+.page_header .logo .border2 {
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+}
+/* line 64, ../sass/screen.scss */
+.page_header .logo:hover .border, .page_header .logo:hover .border2 {
+  transform: rotate(405deg);
+  -webkit-transform: rotate(405deg);
+  -moz-transform: rotate(405deg);
+}
+/* line 70, ../sass/screen.scss */
+.page_header .logo:hover .border2 {
+  transform: rotate(-360deg);
+  -webkit-transform: rotate(-360deg);
+  -moz-transform: rotate(-360deg);
+}
